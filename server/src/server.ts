@@ -1,5 +1,6 @@
 import path from "path";
 import express from "express";
+import { notFound } from "./endpoints";
 import { PORT } from "./env";
 import log from "./log";
 
@@ -7,6 +8,8 @@ const logger = log("server");
 const app = express();
 
 app.use(express.static(path.resolve(__dirname, "../client")));
+
+app.all("/api*", notFound);
 
 export default {
     listen(): Promise<void> {
