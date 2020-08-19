@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  server:
+    build: .
+    ports:
+      - "8080:8080"
+    environment: 
+      - DEBUG=url_shortener*
+      - LOG_LEVEL=debug
+      - MONGO_URL=mongodb://host.docker.internal:27017/URLShortener
+  mongodb:
+    image: "mongo:4.4.0"
+    ports:
+      - "27017:27017"

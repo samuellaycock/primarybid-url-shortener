@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>URL Shortener</title>
+    <% for(var i = 0; i < preload.main.length; i++) { %>
+    <link rel="preload" as="script" crossorigin="anonymous" href="/<%= preload.main[i] %>">
+    <% } %>
+    <% for(var i = 0; i < manifest.styles.length; i++) { %>
+    <link crossorigin="anonymous" rel="stylesheet" href="/<%= manifest.styles[i] %>">
+    <% } %>
+</head>
+
+<body>
+    <div id="root"></div>
+    <%/* Safari 10.1 fix */%>
+    <script type="module">
+        !function (e, t, n) { !("noModule" in (t = e.createElement("script"))) && "onbeforeload" in t && (n = !1, e.addEventListener("beforeload", function (e) { if (e.target === t) n = !0; else if (!e.target.hasAttribute("nomodule") || !n) return; e.preventDefault() }, !0), t.type = "module", t.src = ".", e.head.appendChild(t), t.remove()) }(document)
+    </script>
+    <script type="module" defer src="/<%= manifest.scripts.main %>"></script>
+</body>
+
+</html>

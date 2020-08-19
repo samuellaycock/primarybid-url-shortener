@@ -1,0 +1,23 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "es2015",
+        "moduleResolution": "node",
+        "outDir": "./dist/client",
+        "strict": true,
+        "target": "es6"
+    },
+    "paths": {
+        "@/*": [
+            "./client/src/*"
+        ]
+    },
+    "include": [
+        "./client/src/**/*.ts",
+        "./client/src/**/*.vue"
+    ],
+    "exclude": [
+        "./node_modules",
+        "./server",
+    ]
+}

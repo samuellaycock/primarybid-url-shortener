@@ -1,0 +1,7 @@
+{
+    "watch": [
+        "./server/src"
+    ],
+    "ext": "ts",
+    "exec": "tsc --project ./tsconfig.server.json && node ./dist/server/index.js"
+}

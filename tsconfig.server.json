@@ -1,0 +1,17 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "outDir": "./dist/server",
+        "strict": true,
+        "target": "es6"
+    },
+    "include": [
+        "./server/src/**/*.ts"
+    ],
+    "exclude": [
+        "./node_modules",
+        "./client",
+    ]
+}
