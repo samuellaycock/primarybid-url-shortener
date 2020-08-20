@@ -38,9 +38,9 @@ describe("integration::server/src/endpoints/urls/get-all-urls.ts", () => {
         const { status, success, data } = res.body;
 
         // Response
-        expect(status).toEqual(200);
-        expect(success).toEqual(true);
+        expect(status).toBe(200);
+        expect(success).toBe(true);
         expect(data).toBeInstanceOf(Array);
-        expect(data.length).toEqual(10);
+        expect(data.length).toBe(10);
     });
 });

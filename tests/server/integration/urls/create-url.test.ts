@@ -38,8 +38,8 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
             .lean() as UrlInterface;
 
         // Response
-        expect(status).toEqual(201);
-        expect(success).toEqual(true);
+        expect(status).toBe(201);
+        expect(success).toBe(true);
         expect(data).toHaveProperty("url", url);
         expect(data).toHaveProperty("code");
         expect(data).toHaveProperty("link");
@@ -47,7 +47,7 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
         // Database
         expect(createdUrl).toHaveProperty("url", url);
         expect(createdUrl).toHaveProperty("code");
-        expect(createdUrl.code.length).toEqual(8);
+        expect(createdUrl.code.length).toBe(8);
         expect(createdUrl).toHaveProperty("createdAt");
         expect(createdUrl.createdAt).toBeInstanceOf(Date);
         expect(createdUrl).toHaveProperty("updatedAt");
@@ -63,9 +63,9 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
         const { status, success, error } = res.body;
 
         // Response
-        expect(status).toEqual(422);
-        expect(success).toEqual(false);
-        expect(error).toEqual("'url' is required");
+        expect(status).toBe(422);
+        expect(success).toBe(false);
+        expect(error).toBe("'url' is required");
     });
 
     test("it returns the correct error when given an invalid URL", async () => {
@@ -80,11 +80,11 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
             .lean() as UrlInterface;
 
         // Response
-        expect(status).toEqual(422);
-        expect(success).toEqual(false);
-        expect(error).toEqual("'url' must be a valid URL");
+        expect(status).toBe(422);
+        expect(success).toBe(false);
+        expect(error).toBe("'url' must be a valid URL");
 
         // Database
-        expect(createdUrl).toEqual(null);
+        expect(createdUrl).toBe(null);
     });
 });

@@ -38,12 +38,12 @@ describe("integration::server/src/endpoints/urls/delete-url.ts", () => {
             .lean() as UrlInterface;
 
         // Response
-        expect(status).toEqual(200);
-        expect(success).toEqual(true);
-        expect(data).toEqual("URL deleted");
+        expect(status).toBe(200);
+        expect(success).toBe(true);
+        expect(data).toBe("URL deleted");
 
         // Database
-        expect(deletedUrl).toEqual(null);
+        expect(deletedUrl).toBe(null);
     });
 
     test("it returns the correct error the URL does not exist", async () => {
@@ -54,8 +54,8 @@ describe("integration::server/src/endpoints/urls/delete-url.ts", () => {
         const { status, success, error } = res.body;
 
         // Response
-        expect(status).toEqual(404);
-        expect(success).toEqual(false);
-        expect(error).toEqual("URL not found");
+        expect(status).toBe(404);
+        expect(success).toBe(false);
+        expect(error).toBe("URL not found");
     });
 });

@@ -9,9 +9,9 @@ describe("integration::server/src/endpoints/errors/not-found.ts", () => {
             .expect(404);
 
         const { status, success, error } = res.body;
-    
-        expect(status).toEqual(404);
-        expect(success).toEqual(false);
-        expect(error).toEqual("Not found")
+
+        expect(status).toBe(404);
+        expect(success).toBe(false);
+        expect(error).toBe("Not found")
     });
 });
