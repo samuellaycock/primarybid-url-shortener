@@ -41,8 +41,8 @@ describe("UrlList", () => {
             expect(global.fetch as jest.Mock).toBeCalledTimes(1);
             expect(loading.exists()).toBe(false);
             expect(listItems.length).toBe(urls.length);
-            expect(listItems.at(0).find("a").text()).toBe(urls[0].link);
-            expect(listItems.at(0).find("span").text()).toBe(urls[0].url);
+            expect(listItems.at(0).find("[data-testid=url-list-item-url]").text()).toBe(urls[0].url);
+            expect(listItems.at(0).find("[data-testid=url-list-item-link]").text()).toBe(urls[0].link);
 
             (global.fetch as jest.Mock).mockClear();
 
@@ -72,8 +72,8 @@ describe("UrlList", () => {
                 const listItems = wrapper.findAll("[data-testid=url-list-item]");
 
                 expect(global.fetch as jest.Mock).toBeCalledTimes(3);
-                expect(listItems.at(0).find("a").text())
-                    .not.toBe(toDelete.find("a").text());
+                expect(listItems.at(0).find("[data-testid=url-list-item-link]").text())
+                    .not.toBe(toDelete.find("[data-testid=url-list-item-link]").text());
 
                 (global.fetch as jest.Mock).mockClear();
 

@@ -101,10 +101,13 @@ body {
     --white: #FFFFFF;
     --grey-lightest: #F7FAFC;
     --grey-light: #EDF2F7;
+    --grey: #A0AEC0;
+    --grey-dark: #718096;
     --black: #1A202C;
     --navy: #2B6CB0;
     --navy-dark: #2C5282;
     --red: #E53E3E;
+    --red-dark: #C53030;
 }
 
 .sr-only {

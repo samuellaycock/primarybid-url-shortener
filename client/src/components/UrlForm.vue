@@ -1,5 +1,5 @@
 <template>
-    <div class="url-form">
+    <section class="url-form">
         <div class="sr-only">
             <h2 data-testid="url-form-heading">URL Form</h2>
         </div>
@@ -7,14 +7,14 @@
             <form class="url-form__form" @submit="submitForm" data-testid="url-form">
                 <div class="url-form__form__contents">
                     <input v-model="url" class="url-form__form__input" placeholder="Enter a URL..." required data-testid="url-form-input">
-                    <button type="submit" class="url-form__form__submit" v-bind:disabled="submitting" data-testid="url-form-submit">Shorten URL</button>
+                    <button type="submit" class="url-form__form__submit" :disabled="submitting" data-testid="url-form-submit">Shorten URL</button>
                 </div>
             </form>
         </div>
         <div v-if="error" class="url-form__error" data-testid="url-form-error">
             {{ error }}
         </div>
-    </div>
+    </section>
 </template>
 
 <script lang="ts">
