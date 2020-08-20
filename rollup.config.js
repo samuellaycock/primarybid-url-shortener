@@ -106,7 +106,7 @@ const config = {
         chunkFileNames: NODE_ENV === "production"
             ? "[name].[hash].js" : "[name].js",
         dynamicImportFunction: "__import__",
-        sourcemap: NODE_ENV === "production"? null : "inline",
+        sourcemap: null
     },
     plugins: [
         replace({

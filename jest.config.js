@@ -2,7 +2,7 @@ module.exports = {
     projects: [
         {
             displayName: "client",
-            testMatch: ["<rootDir>/tests/client/**/*.ts"],
+            testMatch: ["<rootDir>/tests/client/**/*.test.ts"],
             moduleFileExtensions: ["js", "ts", "vue"],
             transform: {
                 "\\.ts$": "ts-jest",

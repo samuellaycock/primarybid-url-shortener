@@ -7,7 +7,7 @@ describe("App", () => {
 
         const heading = wrapper.find("h1");
 
-        expect(heading.exists()).toEqual(true);
-        expect(heading.text()).toEqual("URL Shortener");
+        expect(heading.exists()).toBe(true);
+        expect(heading.text()).toBe("URL Shortener");
     });
 });
