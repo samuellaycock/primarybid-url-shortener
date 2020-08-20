@@ -12,7 +12,7 @@ describe("integration::server/src/endpoints/urls/delete-url.ts", () => {
         mongodb = new MongoMemoryServer();
 
         const url = await mongodb.getConnectionString();
-    
+
         await mongoose.connect(url, {
             useNewUrlParser: true,
             useFindAndModify: false,
@@ -20,14 +20,14 @@ describe("integration::server/src/endpoints/urls/delete-url.ts", () => {
             useCreateIndex: true
         });
     });
-      
+
     afterAll(async () => {
         await mongoose.disconnect();
         await mongodb.stop();
     });
 
     test("it returns the correct response when successful", async () => {
-        const { url}  = casual;
+        const { url } = casual;
         const createdUrl = await Url.create({ url }) as UrlInterface;
         const res = await request(server.app)
             .delete(`/api/v1/urls/${createdUrl.code}`)

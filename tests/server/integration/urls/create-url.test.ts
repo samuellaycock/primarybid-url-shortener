@@ -12,7 +12,7 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
         mongodb = new MongoMemoryServer();
 
         const url = await mongodb.getConnectionString();
-    
+
         await mongoose.connect(url, {
             useNewUrlParser: true,
             useFindAndModify: false,
@@ -20,14 +20,14 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
             useCreateIndex: true
         });
     });
-      
+
     afterAll(async () => {
         await mongoose.disconnect();
         await mongodb.stop();
     });
 
     test("it returns the correct response when successful", async () => {
-        const { url}  = casual;
+        const { url } = casual;
         const res = await request(server.app)
             .post("/api/v1/urls")
             .send({ url })
@@ -36,7 +36,7 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
         const { status, success, data } = res.body;
         const createdUrl = await Url.findOne({ url })
             .lean() as UrlInterface;
-    
+
         // Response
         expect(status).toEqual(201);
         expect(success).toEqual(true);
@@ -57,11 +57,11 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
     test("it returns the correct error when not given a URL", async () => {
         const res = await request(server.app)
             .post("/api/v1/urls")
-            .send({ })
+            .send({})
             .expect("Content-Type", /json/)
             .expect(422);
         const { status, success, error } = res.body;
-    
+
         // Response
         expect(status).toEqual(422);
         expect(success).toEqual(false);
@@ -78,7 +78,7 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
         const { status, success, error } = res.body;
         const createdUrl = await Url.findOne({ url })
             .lean() as UrlInterface;
-    
+
         // Response
         expect(status).toEqual(422);
         expect(success).toEqual(false);

@@ -1,11 +1,12 @@
 {
-    "extends": "./tsconfig.json",
     "compilerOptions": {
         "module": "CommonJS",
         "moduleResolution": "node",
         "outDir": "./dist/server",
         "strict": true,
-        "target": "es6"
+        "target": "es6",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
     },
     "include": [
         "./server/src/**/*.ts"

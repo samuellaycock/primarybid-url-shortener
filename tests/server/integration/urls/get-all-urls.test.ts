@@ -12,7 +12,7 @@ describe("integration::server/src/endpoints/urls/get-all-urls.ts", () => {
         mongodb = new MongoMemoryServer();
 
         const url = await mongodb.getConnectionString();
-    
+
         await mongoose.connect(url, {
             useNewUrlParser: true,
             useFindAndModify: false,
@@ -24,7 +24,7 @@ describe("integration::server/src/endpoints/urls/get-all-urls.ts", () => {
             new Array(50).fill(null).map(() => ({ url: casual.url }))
         );
     });
-      
+
     afterAll(async () => {
         await mongoose.disconnect();
         await mongodb.stop();

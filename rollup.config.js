@@ -114,10 +114,10 @@ const config = {
         }),
         commonjs(),
         nodeResolve(),
+        vue(),
         typescript({
             tsconfig: "./tsconfig.client.json"
         }),
-        vue(),
         manifestPlugin(),
         preloadPlugin(),
         templatePlugin(),

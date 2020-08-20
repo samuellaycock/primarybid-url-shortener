@@ -11,7 +11,8 @@ export default {
         await mongoose.connect(MONGO_URL, {
             useNewUrlParser: true,
             useFindAndModify: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useCreateIndex: true
         });
 
         logger.info("Connected to MongoDB");

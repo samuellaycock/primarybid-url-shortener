@@ -33,7 +33,7 @@ export default {
         logger.info("Starting");
 
         return new Promise((resolve, reject) => {
-            app.listen(PORT, (error) => {
+            app.listen(PORT, (error: Error) => {
                 if (error) {
                     reject(error);
                 } else {

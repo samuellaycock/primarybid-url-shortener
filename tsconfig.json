@@ -1,9 +1,0 @@
-{
-    "include": [
-        "./server/src/**/*.ts"
-    ],
-    "exclude": [
-        "./node_modules",
-        "./client",
-    ]
-}
