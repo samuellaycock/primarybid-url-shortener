@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import debug from "debug";
 import { LOG_LEVEL, SERVICE_NAME } from "./env";
 
