@@ -10,7 +10,7 @@ export default {
 
         await mongoose.connect(MONGO_URL, {
             useNewUrlParser: true,
-            useFindAndModify: true,
+            useFindAndModify: false,
             useUnifiedTopology: true,
             useCreateIndex: true
         });
