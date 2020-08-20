@@ -3,9 +3,9 @@
         <div>
             <h2 data-testid="url-list-heading">URL List</h2>
         </div>
-        <error-panel v-if="error" data-testid="url-list-error">
+        <div v-if="error" data-testid="url-list-error">
             {{ error }}
-        </error-panel>
+        </div>
         <div>
             <ul data-testid="url-list">
                 <li v-for="url in urls" :key="url.code" data-testid="url-list-item">
@@ -33,14 +33,10 @@
 
 <script lang="ts">
 import Vue from "vue";
-import ErrorPanel from "./ErrorPanel.vue";
 import events from "../events";
 
 export default Vue.extend({
     name: "UrlList",
-    components: {
-        ErrorPanel,
-    },
     data() {
         return {
             urls: [],
