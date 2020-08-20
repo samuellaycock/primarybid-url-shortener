@@ -37,9 +37,12 @@
                     </div>
                 </li>
             </ul>
-        </div>
-        <div v-if="loading" data-testid="url-list-loading">
-            Loading...
+            <div v-if="!loading && urls.length === 0" class="url-list__message">
+                Add a URL to get started
+            </div>
+            <div v-if="loading" class="url-list__loading" data-testid="url-list-loading">
+                Loading...
+            </div>
         </div>
     </section>
 </template>
@@ -208,6 +211,12 @@ export default Vue.extend({
 
 .url-list__list__item__actions--delete button:hover {
     background-color: var(--red-dark);
+}
+
+.url-list__loading,
+.url-list__message {
+    color: var(--grey-dark);
+    text-align: center;
 }
 
 @media only screen and (min-width: 50rem) {
