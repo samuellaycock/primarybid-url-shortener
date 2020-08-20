@@ -35,24 +35,24 @@ This will build the project in "production" mode. Once the images are built and 
 
 ## Running the test suite
 
-The test suite are written in [Jest](https://jestjs.io/). They are split up into to self contained test suites:
+The test suites are written in [Jest](https://jestjs.io/). They are split up into to self contained test suites:
 
 - Client unit tests
 - Server integration tests
 
-These test can be run together, via:
+These can be run together, via:
 
 ```bash
 npm test
 ```
 
-To run only the client unit tests, you can run:
+To run only the client unit tests, run:
 
 ```bash
 npm run test:client
 ```
 
-To run only the server integration tests, you can run:
+To run only the server integration tests, run:
 
 ```bash
 npm run test:server
