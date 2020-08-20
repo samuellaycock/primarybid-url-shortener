@@ -2,10 +2,10 @@ import url from "url";
 import { Request, Response } from "express";
 import { Url, UrlInterface } from "../../models";
 import { StatusCodes } from "../../types";
-import { LINK_URL } from "../../env"
+import { LINK_URL } from "../../env";
 
 interface CreateUrlBody {
-    url: string
+    url: string;
 }
 
 export default async function createUrl(req: Request, res: Response): Promise<Response> {
