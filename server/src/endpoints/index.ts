@@ -1,10 +1,12 @@
+/* istanbul ignore file */
 import {
     notFound,
     internalServerError
 } from "./errors";
 import {
     createUrl,
-    deleteUrl
+    deleteUrl,
+    getAllUrls
 } from "./urls";
 
 export {
@@ -13,5 +15,6 @@ export {
     internalServerError,
     // URLs
     createUrl,
-    deleteUrl
+    deleteUrl,
+    getAllUrls
 };
