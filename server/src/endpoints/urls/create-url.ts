@@ -25,7 +25,7 @@ export default async function createUrl(req: Request, res: Response): Promise<Re
     try {
         const parsed = url.parse(urlRequest);
 
-        if (!parsed.hostname) {
+        if (!parsed.hostname || !parsed.protocol) {
             throw new Error("Invalid URL");
         }
     } catch (_) {
