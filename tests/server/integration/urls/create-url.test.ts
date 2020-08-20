@@ -84,6 +84,6 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
         expect(error).toEqual("'url' must be a valid URL");
 
         // Database
-        expect(createdUrl).toBe(null);
+        expect(createdUrl).toEqual(null);
     });
 });
