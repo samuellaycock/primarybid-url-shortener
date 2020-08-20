@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Url } from "../../models";
-import { StatusCodes } from "../../types";
+import { StatusCodes } from "../../enums";
 
 export default async function deleteUrl(req: Request, res: Response): Promise<Response> {
     const { params } = req;

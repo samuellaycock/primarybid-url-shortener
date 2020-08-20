@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { StatusCodes } from "../../types"
+import { StatusCodes } from "../../enums"
 
 export default function notFound(req: Request, res: Response): void {
     res

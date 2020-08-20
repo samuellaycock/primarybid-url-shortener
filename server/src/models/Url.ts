@@ -14,7 +14,7 @@ const urlSchema = new Schema(
         code: {
             type: String,
             unique: true,
-            default: randomstring.generate({
+            default: () => randomstring.generate({
                 length: 8,
                 capitalization: "lowercase"
             })

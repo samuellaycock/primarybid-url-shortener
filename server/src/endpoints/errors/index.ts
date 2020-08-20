@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import internalServerError from "./internal-server-error"
 import notFound from "./not-found";
 

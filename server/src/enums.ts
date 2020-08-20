@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 export enum StatusCodes {
     SUCCESS = 200,
     CREATED = 201,

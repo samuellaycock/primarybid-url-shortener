@@ -7,7 +7,8 @@ import {
     internalServerError,
     // URLs
     createUrl,
-    deleteUrl
+    deleteUrl,
+    getAllUrls
 } from "./endpoints";
 import { PORT } from "./env";
 import log from "./log";
@@ -18,6 +19,7 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, "../client")));
 app.use(bodyParser.json());
 
+app.get("/api/v1/urls", getAllUrls);
 app.post("/api/v1/urls", createUrl);
 app.delete("/api/v1/urls/:code", deleteUrl);
 

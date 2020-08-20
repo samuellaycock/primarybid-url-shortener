@@ -1,7 +1,7 @@
 import url from "url";
 import { Request, Response } from "express";
 import { Url, UrlInterface } from "../../models";
-import { StatusCodes } from "../../types";
+import { StatusCodes } from "../../enums";
 import { LINK_URL } from "../../env";
 
 interface CreateUrlBody {

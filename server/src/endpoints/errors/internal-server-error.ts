@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import { Request, Response } from "express";
-import { StatusCodes } from "../../types";
+import { StatusCodes } from "../../enums";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function internalServerError(error: Error, req: Request, res: Response, next: () => void): Response {
