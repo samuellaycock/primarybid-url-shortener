@@ -1,7 +1,6 @@
 FROM node:12 as build
 
 COPY package.json .
-COPY tsconfig.json .
 COPY tsconfig.client.json .
 COPY tsconfig.server.json .
 COPY rollup.config.js .
