@@ -15,6 +15,7 @@ FROM node:12
 
 COPY package.json .
 
+RUN touch .env
 RUN npm i --production
 
 COPY --from=build dist dist/
