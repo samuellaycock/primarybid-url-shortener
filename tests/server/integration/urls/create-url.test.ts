@@ -15,8 +15,9 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
     
         await mongoose.connect(url, {
             useNewUrlParser: true,
-            useFindAndModify: true,
-            useUnifiedTopology: true
+            useFindAndModify: false,
+            useUnifiedTopology: true,
+            useCreateIndex: true
         });
     });
       

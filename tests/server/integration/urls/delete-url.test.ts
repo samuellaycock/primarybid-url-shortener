@@ -5,7 +5,7 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import server from "../../../../server/src/server";
 import { Url, UrlInterface } from "../../../../server/src/models";
 
-describe("integration::server/src/endpoints/urls/create-url.ts", () => {
+describe("integration::server/src/endpoints/urls/delete-url.ts", () => {
     let mongodb;
 
     beforeAll(async () => {
