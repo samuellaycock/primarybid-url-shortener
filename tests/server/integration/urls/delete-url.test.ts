@@ -15,8 +15,9 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
     
         await mongoose.connect(url, {
             useNewUrlParser: true,
-            useFindAndModify: true,
-            useUnifiedTopology: true
+            useFindAndModify: false,
+            useUnifiedTopology: true,
+            useCreateIndex: true
         });
     });
       
@@ -50,11 +51,11 @@ describe("integration::server/src/endpoints/urls/create-url.ts", () => {
             .delete(`/api/v1/urls/invalid_code`)
             .expect("Content-Type", /json/)
             .expect(404);
-        const { status, success, data } = res.body;
+        const { status, success, error } = res.body;
 
         // Response
         expect(status).toEqual(404);
         expect(success).toEqual(false);
-        expect(data).toEqual("URL not found");
+        expect(error).toEqual("URL not found");
     });
 });

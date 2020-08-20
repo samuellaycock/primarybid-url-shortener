@@ -1,7 +1,14 @@
 import path from "path";
 import express from "express";
 import bodyParser from "body-parser";
-import { notFound, internalServerError, createUrl } from "./endpoints";
+import {
+    // Errors
+    notFound,
+    internalServerError,
+    // URLs
+    createUrl,
+    deleteUrl
+} from "./endpoints";
 import { PORT } from "./env";
 import log from "./log";
 
@@ -12,6 +19,7 @@ app.use(express.static(path.resolve(__dirname, "../client")));
 app.use(bodyParser.json());
 
 app.post("/api/v1/urls", createUrl);
+app.delete("/api/v1/urls/:code", deleteUrl);
 
 app.all("/api*", notFound);
 

@@ -1,10 +1,17 @@
-import { notFound, internalServerError } from "./errors";
 import {
-    createUrl
+    notFound,
+    internalServerError
+} from "./errors";
+import {
+    createUrl,
+    deleteUrl
 } from "./urls";
 
 export {
+    // Errors
     notFound,
     internalServerError,
-    createUrl
+    // URLs
+    createUrl,
+    deleteUrl
 };
